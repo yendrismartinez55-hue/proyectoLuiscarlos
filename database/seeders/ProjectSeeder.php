@@ -17,7 +17,7 @@ class ProjectSeeder extends Seeder
         // Creamos los 4 proyectos asignados al admin
         Project::factory(4)
             ->for($admin, 'creator')
-            ->create()
+            ->create()  
             ->each(function (Project $project) use ($collaborators) {
                 // Selecciona 3 colaboradores aleatorios y los adjunta al proyecto
                 $participants = $collaborators->random(3);
